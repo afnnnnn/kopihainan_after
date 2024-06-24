@@ -8,7 +8,7 @@ Group eXampplers
 -Description-
 An enhanced and secured version of Kopi Hainan website
 
-###Enhancement
+##Enhancement
 Register and login page
 - new register page added for user to register their information, and login page added for users to login as users
 
@@ -29,3 +29,8 @@ File security
 
 SSL certificate
 - SSL certificate is acquired to implement https
+
+File traversal defense
+- in xampp, the apache httpd.conf file has been configured to not allow file traversal
+
+
