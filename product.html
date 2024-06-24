@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Kopi Hainan | What We Sell </title>
+  <meta name="viewport" content="width=device-width", initial-scale=1.0">
+  <title> Our Coffees | Kopi Hainan </title>
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+
+<body>
+
+  <section>
+
+  <header>
+    <a href="index.html" class="logo"><img src="img/lg-khainan.png"></a>
+    <ul>
+      <li><a href = "index.html">Home</a></li>
+      <li><a href = "product.html">What we sell</a></li>
+      <li><a href = "promotion.html">Promotion</a></li>
+      <li><a href = "about.html">About Us</a></li>
+      <li><a href = "contact.html">Contact</a></li>
+    </ul>
+  </header>
+
+  <div class="container">
+    <div class="product">
+      <div class="product-card">
+        <h2 class="name">Kopi Hainan Regular</h2>
+        <span class="price">RM2.00 - RM4.00</span>
+
+        <a class="popup-btn">To Order</a>
+        <img src="img/regular.png" class="product-img" alt="" />
+      </div>
+      <div class="popup-view">
+        <div class="popup-card">
+          <a><i class="fas fa-times close-btn"></i></a>
+          <div class="product-img-reg">
+            <img src="img/regular.png" alt="">
+          </div>
+          <div class="info">
+            <h2>Kopi Hainan<br><span>Regular</span></h2>
+              <span class="kopi-info"> 20oz - RM2.00</span>
+              <span class="kopi-info"> 30oz - RM3.00</span>
+              <span class="kopi-info"> 40oz - RM4.00</span>
+
+              <a href="https://forms.gle/yaVrVXDfJHS5qNBu7" target="_blank" class="ord-to-btn">Order Now</a>
+
+
+          </div>
+        </div>
+       </div>
+      </div>
+      <div class="product">
+        <div class="product-card">
+          <h2 class="name">Kopi Hainan Signature</h2>
+          <span class="price">RM6.00</span>
+          <a class="popup-btn">To Order</a>
+          <img src="img/signature.png" class="product-img" alt="" />
+        </div>
+        <div class="popup-view">
+          <div class="popup-card">
+            <a><i class="fas fa-times close-btn"></i></a>
+            <div class="product-img">
+              <img src="img/signature.png" alt="">
+            </div>
+            <div class="info">
+              <h2>Kopi Hainan<br><span>Signature Premium</span></h2>
+              <span class="kopi-info">Caramel Cream</span>
+              <span class="kopi-info">Hersheys Chocolate</span>
+              <span class="kopi-info">Whipped Cream</span>
+
+                <span class="price">RM6.00</span>
+                <a href="https://forms.gle/yaVrVXDfJHS5qNBu7" target="_blank" class="ord-to-btn">Order Now</a>
+
+
+            </div>
+          </div>
+         </div>
+        </div>
+
+
+          </div>
+
+    </section>
+
+    <div class="footer">
+        <div class="social-footer">
+          <a href="https://www.instagram.com/kopihainangombak/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com/kopihainaniium/?ref=page_internal" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://wa.me/60133920201"target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+
+        <ul class="list">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="product.html">What we sell</a>
+          </li>
+          <li>
+            <a href="promotion.html">Promotion</a>
+          </li>
+          <li>
+            <a href="about.html">About Us</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+        <p class="copyright">
+          Copyright of IT Freshers @ 2022.
+        </p>
+      </div>
+
+
+
+
+
+      <script type="text/javascript">
+        var popupViews = document.querySelectorAll('.popup-view');
+        var popupBtns = document.querySelectorAll('.popup-btn');
+        var closeBtns = document.querySelectorAll('.close-btn');
+
+        // javascript for quick view button
+        var popup = function(popupClick){
+          popupViews[popupClick].classList.add('active')
+        }
+
+        popupBtns.forEach((popupBtn, i)=> {
+          popupBtn.addEventListener("click", ()=> {
+            popup(i);
+          });
+        });
+
+          // javascript for close button
+          closeBtns.forEach((closeBtn)=> {
+            closeBtn.addEventListener("click", ()=> {
+              popupViews.forEach((popupViews) => {
+                popupViews.classList.remove('active');
+              })
+            })
+          })
+      </script>
+
+
+
+
+
+
+
+</body>
+</html>
