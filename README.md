@@ -30,6 +30,7 @@ Kopi Hainan is a beverage shop that sells coffee. The shop can be found in few l
       Worked on register.php and db.php includeing it's input validation and created the file validation.js
     - file traversal
       Configured the httpd.conf file in xampp to prevent file traversal
+      
       ![image](https://github.com/afnnnnn/kopihainan_after/assets/103879224/4575c40f-a037-4982-9a93-7e3ec637dff9)
       ![image](https://github.com/afnnnnn/kopihainan_after/assets/103879224/18074496-9081-4b1a-a6e8-f82273a2e036)
 
