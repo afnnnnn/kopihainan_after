@@ -17,10 +17,7 @@ XSS & CSRF Prevention:
 Data Security Principles:
 File Security Principles: 
 
--Description-
-An enhanced and secured version of Kopi Hainan website
-
-##Enhancement
+# Enhancements Implemented
 Register and login page
 - new register page added for user to register their information, and login page added for users to login as users
 
