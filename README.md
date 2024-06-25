@@ -5,6 +5,18 @@ Group eXampplers
 - Sharul Irfan bin Sharul Isram (1921825)
 - Muhammad Hazim bin Ibrahim (2014309)
 
+# Title: Kopi Hainan
+# Introduction
+Kopi Hainan is a beverage shop that sells coffee. The shop can be found in few locations, including within the IIUM Student Mall. Kopi Hainan serves their coffees, served with some toppings and flavours, to give customers a chance of personalizing their coffee, and bring smiles to the customer to enjoy their beverages.
+
+# Objective of the Enhancements
+Input validation: 
+Authentication: 
+Authorization: 
+XSS & CSRF Prevention: 
+Data Security Principles:
+File Security Principles: 
+
 -Description-
 An enhanced and secured version of Kopi Hainan website
 
