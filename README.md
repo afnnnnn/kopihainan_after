@@ -43,7 +43,7 @@ Kopi Hainan is a beverage shop that sells coffee. The shop can be found in few l
 `SSL certificate`
 - SSL certificate is acquired to implement https
 
-File traversal defense
+`File traversal defense`
 - in xampp, the apache httpd.conf file has been configured to not allow file traversal
 
 
