@@ -37,13 +37,18 @@ Kopi Hainan is a beverage shop that sells coffee. The shop can be found in few l
 `Data security`
 - password stored in the database will be encrypted in case of any breach
 
-`File security`
-- configuration will be done in xampp to limit the traversal up to httdocs
-
 `SSL certificate`
 - SSL certificate is acquired to implement https
 
 `File traversal defense`
 - in xampp, the apache httpd.conf file has been configured to not allow file traversal
 
+`brute force defense`
+- users cannot access other files unless they are logged in first
+
+`Content security police`
+- CSP header added so that outside script cant be read
+
+ `XSS defense`
+- XSS proof form implemented by using input validation
 
