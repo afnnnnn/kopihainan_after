@@ -1,3 +1,21 @@
+<?php
+// Set the Content-Security-Policy header(only allow scripts from the same domain)
+header("Content-Security-Policy: script-src 'self'");
+
+// Start the session
+session_start();
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+  header("Location: login.php");
+  exit;}
+
+// Get the session ID
+$sessionId = session_id();
+
+// Output the session ID
+echo "Session ID: " . $sessionId;
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -10,13 +28,13 @@
   <section>
     <div class = "circle"></div>
     <header>
-      <a href="index.html" class="logo"><img src="img/lg-khainan.png"></a>
+      <a href="index.php" class="logo"><img src="img/lg-khainan.png"></a>
       <ul>
-        <li><a href = "index.html">Home</a></li>
-        <li><a href = "product.html">What we sell</a></li>
+        <li><a href = "index.php">Home</a></li>
+        <li><a href = "product.php">What we sell</a></li>
         <li><a href = "promotion.html">Promotion</a></li>
-        <li><a href = "about.html">About Us</a></li>
-        <li><a href = "contact.html">Contact</a></li>
+        <li><a href = "about.php">About Us</a></li>
+        <li><a href = "contact.php">Contact</a></li>
       </ul>
     </header>
 <section class="about">
@@ -39,6 +57,31 @@
 </div>
 </div>
 </section>
+
+<style>
+    /* Add your custom styles here */
+    .logout-button {
+      background-color: #ff6f00;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      width: 200px;
+      text-align: center;
+    }
+
+    .logout-button:hover {
+      background-color: #ff8f00;
+    }
+  </style>
+
+  <form method="post" action="logout.php">
+    <button type="submit" class="logout-button">Logout</button>
+  </form>
 
 <div class="footer">
     <div class="social-footer">
