@@ -95,6 +95,7 @@
       }
     </style>
     <script>
+      
       function validateForm() {
         let name = document.forms["contactForm"]["name"].value;
         let email = document.forms["contactForm"]["email"].value;
@@ -135,6 +136,7 @@
       <form name="contactForm" action="process_contact.php" onsubmit="return validateForm()" method="post">
         <h1>Contact Us</h1>
         <div class="info">
+        <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
           <input class="fname" type="text" name="name" placeholder="Full name">
           <input type="text" name="email" placeholder="Email">
           <input type="text" name="phone" placeholder="Phone number">
@@ -204,4 +206,5 @@
     </div>
   </body>
 </html>
+
 
