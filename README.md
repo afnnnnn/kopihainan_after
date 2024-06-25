@@ -22,33 +22,37 @@ Kopi Hainan is a beverage shop that sells coffee. The shop can be found in few l
 
 
 # Enhancements Implemented
-`Register and login page`
-- new register page added for user to register their information, and login page added for users to login as users
+`Register and Login Page`
+- Added register page (`register.php`) for user to register their information, and login page (`login.php`) added for users to login as users.
+ - `form_handler.php` is added to validate the input validation. See `Input Validation` section for more elaboration.
 
-`Input validation`
-- Input from users will be going through some process of validation before being sent to the database
-- client side: HTML
-- server side: PHP
+`Input Validation`
+- Input from users will be going through some process of validation before being sent to the database.
+ - Client side: HTML
+ - Server side: PHP
+- `form_handler.php` includes the password encryption to encrypt the password to be stored in MySQL. After successfully login, and validated in this file, users are redirected to `index.php`, and a hashed Session ID is issued.
 
 `Authentication`
-- User login email and password will be authenthicated before going to the index.html
-- Session id is also implemented on login
+- User login email and password will be authenthicated before going to the `index.html`. If users input the incorrect details, am error message is displayed, and the users are unable to access the web application.
+- Session ID is implemented on login. The ID would be used throughout the whole session within the web application, until the user logout of the web application and the session ID is destroyed. If the user re-login, a different session ID is issued.
 
-`Data security`
-- password stored in the database will be encrypted in case of any breach
+`Data Security`
+- Password stored in the database (MySQL) will be encrypted in case of any breach. Users are able to login the original password in the web application.
 
-`SSL certificate`
-- SSL certificate is acquired to implement https
+`SSL Certificate`
+- SSL certificate is acquired to implement https.
 
-`File traversal defense`
-- in xampp, the apache httpd.conf file has been configured to not allow file traversal
+`File Traversal Defense`
+- In XAMPP, the apache httpd.conf file has been configured to not allow file traversal. Users are unable to traverse outside of the web application (unable to do "/..etc")
 
-`brute force defense`
-- users cannot access other files unless they are logged in first
+`Brute Force Defense`
+- Users cannot access other files unless they are logged in first. If users attempt to traverse within the web application without authentication, users would be redirected to the login page.
 
-`Content security police`
-- CSP header added so that outside script cant be read
+`Content Security Policy (CSP)`
+- CSP header added so that outside script cannot be read.
 
- `XSS defense`
-- XSS proof form implemented by using input validation
+ `Cross-Site Scripting (XSS) Defense`
+- XSS proof form implemented by using input validation. Users cannot perform malicious code injection.
 
+ `Cross-Site Request Forgery (CSRF) Defense`
+- CSRF token added in `contact.php` and process `contact.php`. This prevents users from modifying existing data in the database.
