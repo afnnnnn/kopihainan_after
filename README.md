@@ -21,7 +21,26 @@ Kopi Hainan is a beverage shop that sells coffee. The shop can be found in few l
 `File Security Principles`: Prevents file traversal outside of the web application, including files stored within the same file as the web application.
 
 # Task distribution
-- Afnan (login, register, file traversal, authenthication, brute force defense)
+- Afnan
+    - login page:
+      worked on the general code of login.php(including input validation) Session id generator, and set the logged in variable as true when logged in to prevent file traversal
+      ![image](https://github.com/afnnnnn/kopihainan_after/assets/103879224/f9cc93b3-b1b3-4956-bb57-7157baf5a863)
+
+    - register page:
+      Worked on register.php and db.php includeing it's input validation and created the file validation.js
+    - file traversal
+      Configured the httpd.conf file in xampp to prevent file traversal
+      ![image](https://github.com/afnnnnn/kopihainan_after/assets/103879224/4575c40f-a037-4982-9a93-7e3ec637dff9)
+      ![image](https://github.com/afnnnnn/kopihainan_after/assets/103879224/18074496-9081-4b1a-a6e8-f82273a2e036)
+
+    - CSP header:
+      added CSP header in all the pages
+      ![image](https://github.com/afnnnnn/kopihainan_after/assets/103879224/645b2984-8690-4eec-ad45-5f248065f82d)
+
+    - SSL certificate
+      acquired SSL certificate to implement https
+      ![image](https://github.com/afnnnnn/kopihainan_after/assets/103879224/c62298aa-65b4-43f1-844d-a4a4e6241c17)
+
 - Hazim (login, register, password encryption, authenthication)
 - Syahrul (contact.php, XSS, CSRF)
 
