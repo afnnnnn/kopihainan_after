@@ -24,7 +24,7 @@ Kopi Hainan is a beverage shop that sells coffee. The shop can be found in few l
 # Enhancements Implemented
 `Register and Login Page`
 - Added register page (`register.php`) for user to register their information, and login page (`login.php`) added for users to login as users.
- - `form_handler.php` is added to validate the input validation. See `Input Validation` section for more elaboration.
+ - `form_handler.php` is added to validate the input validation.
 
 `Input Validation`
 - Input from users will be going through some process of validation before being sent to the database.
