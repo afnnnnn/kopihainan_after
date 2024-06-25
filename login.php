@@ -1,34 +1,41 @@
 <?php
+
 require_once 'db.php'; // Include your database connection file
 
-
-// Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get the email and password from the form
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+$email = trim($_POST['email']);
+$password = trim($_POST['password']);
 
-    // Validate the email(XSS defense)
-    $email = $_POST['email'];
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     die("Invalid email format");
 }
 
-    // Perform the authentication
-    if (authenticateUser($connection, $email, $password)) {
-        echo "Successfully logged in";
-    } else {
-        echo "Invalid email or password";
-    }
+$email = strtolower($email); // Canonicalize email to lowercase
 
-    // Close the connection
-    $connection->close();
+// Perform the authentication
+if (authenticateUser($connection, $email, $password)) {
+    echo "Successfully logged in";
+    header("Location: index.php");
+    session_start();                        // Start a session
+    session_regenerate_id(true);            // Regenerate session ID
+    $sessionId = session_id();              // Get the new session ID
+    $_SESSION['sessionId'] = $sessionId;    // Store the session ID in a session variable
+    exit;
+} else {
+    echo "Invalid email or password";
 }
+}
+// Close the connection
+$connection->close();
+
 // Function to authenticate the user
 function authenticateUser($connection, $email, $password) {
-    // Query the database to check if the email and password match a registered user
-    $query = "SELECT * FROM account WHERE email = '$email' AND password = '$password'";
-    $result = mysqli_query($connection, $query);
+    // Use prepared statements to prevent SQL injection
+    $query = "SELECT * FROM account WHERE email = ? AND password = ?";
+    $stmt = mysqli_prepare($connection, $query);
+    mysqli_stmt_bind_param($stmt, "ss", $email, $password);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
 
     if (mysqli_num_rows($result) > 0) {
         return true;
