@@ -20,6 +20,10 @@ Kopi Hainan is a beverage shop that sells coffee. The shop can be found in few l
 
 `File Security Principles`: Prevents file traversal outside of the web application, including files stored within the same file as the web application.
 
+# Task distribution
+- Afnan (login, register, file traversal, authenthication, brute force defense)
+- Hazim (login, register, password encryption, authenthication)
+- Syahrul (contact.php, XSS, CSRF)
 
 # Enhancements Implemented
 `Register and Login Page`
