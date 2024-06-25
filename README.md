@@ -10,12 +10,16 @@ Group eXampplers
 Kopi Hainan is a beverage shop that sells coffee. The shop can be found in few locations, including within the IIUM Student Mall. Kopi Hainan serves their coffees, served with some toppings and flavours, to give customers a chance of personalizing their coffee, and bring smiles to the customer to enjoy their beverages.
 
 # Objective of the Enhancements
-Input validation: 
-Authentication: 
-Authorization: 
-XSS & CSRF Prevention: 
-Data Security Principles:
-File Security Principles: 
+Input validation: Ensures users to input the correct string, or text in a text field.
+
+Authentication: To allow access to certain users, specifically to users who has registered an account in the web application.
+
+XSS & CSRF Prevention: Prevents any malicious code injection, taht allow attackers to gain any sensitive information, within the website.
+
+Database Security Principles: Prevents SQL injection and data leaking; disabling attackers from accessing the databse information.
+
+File Security Principles: Prevents file traversal outside of the web application, including files stored within the same file as the web application.
+
 
 # Enhancements Implemented
 Register and login page
