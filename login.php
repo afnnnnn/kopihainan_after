@@ -15,6 +15,9 @@ $email = strtolower($email); // Canonicalize email to lowercase
 // Perform the authentication
 if (authenticateUser($connection, $email, $password)) {
     echo "Successfully logged in";
+    // Set session variable
+    session_start();
+    $_SESSION['loggedin'] = true;
     header("Location: index.php");
     session_start();                        // Start a session
     session_regenerate_id(true);            // Regenerate session ID
@@ -23,6 +26,7 @@ if (authenticateUser($connection, $email, $password)) {
     exit;
 } else {
     echo "Invalid email or password";
+    $_SESSION['loggedin'] = false;          // Set the loggedin session variable
 }
 }
 // Close the connection
@@ -31,13 +35,15 @@ $connection->close();
 // Function to authenticate the user
 function authenticateUser($connection, $email, $password) {
     // Use prepared statements to prevent SQL injection
-    $query = "SELECT * FROM account WHERE email = ? AND password = ?";
-    $stmt = mysqli_prepare($connection, $query);
-    mysqli_stmt_bind_param($stmt, "ss", $email, $password);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
+    $query = "SELECT * FROM account WHERE email = ?";
+    $stmt = $connection->prepare($query);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
 
-    if (mysqli_num_rows($result) > 0) {
+    // If user exists and passwords match
+    if ($user && password_verify($password, $user['password'])) {
         return true;
     } else {
         return false;
