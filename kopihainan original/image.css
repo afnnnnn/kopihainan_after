@@ -1,0 +1,25 @@
+.img-drink-1{
+  width : 1505px;
+  height : 400px;
+  object-fit: fill;
+  object-position: center center;
+}
+
+.main {
+  position: relative;
+  text-align: center;
+}
+
+.tittle {
+  position: absolute;
+  top: 8px;
+  left: 41%;
+  font-size: 50px;
+}
+
+.img-drink-2{
+  width : 1505px;
+  height :900px;
+  object-fit: fill;
+  object-position: center center;
+}
